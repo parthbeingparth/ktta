@@ -33,7 +33,7 @@ const TournamentResults = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch("http://parthgoai.pythonanywhere.com/matches");
+        const response = await fetch("https://parthgoai.pythonanywhere.com/matches");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
