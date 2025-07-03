@@ -13,6 +13,7 @@ interface Match {
   winner: string;
   sender_number: string;
   timestamp: string;
+  game_scores?: string;
 }
 
 interface MatchesTableProps {
@@ -57,6 +58,7 @@ const MatchesTable = ({ matches }: MatchesTableProps) => {
                 <TableHead className="text-[#291F4D] font-semibold">Team 2</TableHead>
                 <TableHead className="text-[#291F4D] font-semibold">Score</TableHead>
                 <TableHead className="text-[#291F4D] font-semibold">Winner</TableHead>
+                <TableHead className="text-[#291F4D] font-semibold">Game Scores</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -81,6 +83,11 @@ const MatchesTable = ({ matches }: MatchesTableProps) => {
                       <Trophy className="h-3 w-3 mr-1" />
                       {match.winner}
                     </Badge>
+                  </TableCell>
+                  <TableCell className="text-sm text-gray-600">
+                    {match.game_scores && match.game_scores.split(' | ').map((score, i) => (
+                      <div key={i}>{score}</div>
+                    ))}
                   </TableCell>
                 </TableRow>
               ))}

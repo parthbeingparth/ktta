@@ -20,6 +20,7 @@ interface Match {
   winner: string;
   sender_number: string;
   timestamp: string;
+  game_scores?: string;
 }
 
 const TournamentResults = () => {
@@ -92,7 +93,7 @@ const TournamentResults = () => {
           </Link>
 
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-[#291F4D] mb-2">Tournament Results</h1>
+            <h1 className="text-4xl font-bold text-[#291F4D] mb-2">Match Results</h1>
             <p className="text-gray-600">Complete results from all KTTA tournaments</p>
           </div>
 
