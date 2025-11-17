@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MatchesTable from "@/components/MatchesTable";
+import { API_BASE_URL } from "@/lib/config";
 
 interface Match {
   date: string;
@@ -33,7 +34,7 @@ const TournamentResults = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch("https://parthgoai.pythonanywhere.com/matches");
+        const response = await fetch(`${API_BASE_URL}/matches`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
